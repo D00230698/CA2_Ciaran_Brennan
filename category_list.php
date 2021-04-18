@@ -14,7 +14,7 @@
 <?php
 include('includes/header.php');
 ?>
-    <h1>Category List</h1>
+    <h1>Country List</h1>
     <table>
         <tr>
             <th>Name</th>
@@ -36,7 +36,7 @@ include('includes/header.php');
     </table>
     <br>
 
-    <h2>Add Category</h2>
+    <h2>Add Country</h2>
     <form action="add_category.php" method="post"
           id="add_category_form">
 

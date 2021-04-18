@@ -42,11 +42,11 @@ $statement3->closeCursor();
 <?php
 include('includes/header.php');
 ?>
-<h1>Record List</h1>
+<h1>Country List</h1>
 
 <aside>
 <!-- display a list of categories -->
-<h2>Categories</h2>
+<h2>Countries</h2>
 <nav>
 <ul>
 <?php foreach ($categories as $category) : ?>
@@ -66,7 +66,8 @@ include('includes/header.php');
 <tr>
 <th>Image</th>
 <th>Name</th>
-<th>Price</th>
+<th>Sport</th>
+<th>Age</th>
 <th>Delete</th>
 <th>Edit</th>
 </tr>
@@ -74,7 +75,8 @@ include('includes/header.php');
 <tr>
 <td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
 <td><?php echo $record['name']; ?></td>
-<td class="right"><?php echo $record['price']; ?></td>
+<td class="right"><?php echo $record['sport']; ?></td>
+<td class="right"><?php echo $record['age']; ?></td>
 <td><form action="delete_record.php" method="post"
 id="delete_record_form">
 <input type="hidden" name="record_id"
@@ -94,8 +96,8 @@ value="<?php echo $record['categoryID']; ?>">
 </tr>
 <?php endforeach; ?>
 </table>
-<p><a href="add_record_form.php">Add Record</a></p>
-<p><a href="category_list.php">Manage Categories</a></p>
+<p><a href="add_record_form.php">Add Player</a></p>
+<p><a href="category_list.php">Manage Countries</a></p>
 </section>
 <?php
 include('includes/footer.php');

@@ -13,11 +13,11 @@ $statement->closeCursor();
 <?php
 include('includes/header.php');
 ?>
-        <h1>Add Record</h1>
+        <h1>Add Player</h1>
         <form action="add_record.php" method="post" enctype="multipart/form-data"
               id="add_record_form">
 
-            <label>Category:</label>
+            <label>Country:</label>
             <select name="category_id">
             <?php foreach ($categories as $category) : ?>
                 <option value="<?php echo $category['categoryID']; ?>">
@@ -30,8 +30,12 @@ include('includes/header.php');
             <input type="input" name="name">
             <br>
 
-            <label>List Price:</label>
-            <input type="input" name="price">
+            <label>Sport:</label>
+            <input type="input" name="sport">
+            <br>
+
+            <label>Age:</label>
+            <input type="input" name="age">
             <br>        
             
             <label>Image:</label>
