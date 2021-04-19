@@ -2,6 +2,9 @@
 <head>
 <title>My PHP CRUD App</title>
 <link rel="stylesheet" type="text/css" href="css/main.css">
+</style>	
+<!-- a helper script for validating the form-->
+<script language="JavaScript" src="scripts/gen_validatorv31.js" type="text/javascript"></script>
 </head>
 
 <!-- the body section -->
