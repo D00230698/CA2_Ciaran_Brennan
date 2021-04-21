@@ -2,7 +2,8 @@
 $errors = '';
 $myemail = 'd00230698@student.dkit.ie';//<-----Put your DkIT email address here.
 if(empty($_POST['name'])  || 
-   empty($_POST['email']) || 
+   empty($_POST['email']) ||
+   empty($_POST['phone']) ||
    empty($_POST['message']))
 {
     $errors .= "\n Error: all fields are required";
@@ -10,6 +11,7 @@ if(empty($_POST['name'])  ||
 
 $name = $_POST['name']; 
 $email_address = $_POST['email']; 
+$phone_number = $_POST['phone']
 $message = $_POST['message']; 
 
 if (!preg_match(
