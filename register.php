@@ -17,7 +17,14 @@ require 'libary-folder/password.php';
  */
 require 'login_connect.php';
 
+?>
 
+<!DOCTYPE html>
+<?php
+include('includes/header.php');
+?>
+
+<?php
 //If the POST var "register" exists (our submit button), then we can
 //assume that the user has submitted the registration form.
 if(isset($_POST['register'])){
@@ -72,6 +79,8 @@ if(isset($_POST['register'])){
     if($result){
         //What you do here is up to you!
         echo 'Thank you for registering with our website.';
+        header('Location: login.php');
+        exit;
     }
     
 }
