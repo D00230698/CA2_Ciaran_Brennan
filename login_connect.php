@@ -19,7 +19,7 @@ define('MYSQL_PASSWORD', 'root');
 define('MYSQL_HOST', 'localhost');
 
 //The name of our database.
-define('MYSQL_DATABASE', 'shoes');
+define('MYSQL_DATABASE', 'server_olympics');
 
 /**
  * PDO options / configuration details.
