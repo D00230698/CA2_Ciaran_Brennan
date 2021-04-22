@@ -3,11 +3,6 @@
 //register.php
 
 /**
- * Start the session.
- */
-session_start();
-
-/**
  * Include ircmaxell's password_compat library.
  */
 require 'libary-folder/password.php';
@@ -19,7 +14,7 @@ require 'login_connect.php';
 
 ?>
 <div class="container">
-    
+
 <!DOCTYPE html>
 <?php
 include('includes/header.php');
@@ -32,6 +27,7 @@ if(isset($_POST['register'])){
     
     //Retrieve the field values from our registration form.
     $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
+    $phone = !empty($_POST['phone']) ? trim($_POST['phone']) : null;
     $pass = !empty($_POST['password']) ? trim($_POST['password']) : null;
     
     //TO ADD: Error checking (username characters, password length, etc).
@@ -66,11 +62,12 @@ if(isset($_POST['register'])){
     
     //Prepare our INSERT statement.
     //Remember: We are inserting a new row into our users table.
-    $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
+    $sql = "INSERT INTO users (username, phone, password) VALUES (:username, :phone, :password)";
     $stmt = $pdo->prepare($sql);
     
     //Bind our variables.
     $stmt->bindValue(':username', $username);
+    $stmt->bindValue(':phone', $phone);
     $stmt->bindValue(':password', $passwordHash);
 
     //Execute the statement and insert the new account.
@@ -93,10 +90,18 @@ if(isset($_POST['register'])){
         <form action="register.php" method="post">
             <label for="username">Username</label>
             <input type="text" id="username" name="username"><br>
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" name="phone"><br>
             <label for="password">Password</label>
             <input type="text" id="password" name="password"><br>
             <input type="submit" name="register" value="Register"></button>
         </form>
+        <script language="JavaScript">
+	var frmvalidator  = new Validator("register");
+	frmvalidator.addValidation("name","req","Please provide your name"); 
+	frmvalidator.addValidation("phone","req","Please provide your phone"); 
+	frmvalidator.addValidation("email","email","Please enter a valid email address"); 
+	</script>
         <?php
 include('includes/footer.php');
 ?>

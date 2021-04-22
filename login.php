@@ -1,12 +1,9 @@
+<div class="container">
 <?php
+include('includes/header.php');
+?>
 
-//login.php
-
-/**
- * Start the session.
- */
-session_start();
-
+<?php
 
 /**
  * Include ircmaxell's password_compat library.
@@ -60,7 +57,7 @@ if(isset($_POST['login'])){
             $_SESSION['logged_in'] = time();
             
             //Redirect to our protected page, which we called home.php
-            header('Location: manage.php');
+            header('Location: index.php');
             exit;
             
         } else{
@@ -71,11 +68,6 @@ if(isset($_POST['login'])){
     
 }
  
-?>
-<div class="container">
-<!DOCTYPE html>
-<?php
-include('includes/header.php');
 ?>
         <h1>Login</h1>
         <form action="login.php" method="post">

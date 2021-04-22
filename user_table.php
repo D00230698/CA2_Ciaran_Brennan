@@ -2,7 +2,7 @@
 require_once('database.php');
 
 
-if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'] != 1)) {
+if ((isset($_SESSION['user_id']) && !empty($_SESSION['user_id'] != 1))) {
     //User not logged in. Redirect them back to the login.php page.
     header('Location: login.php');
     exit;
@@ -11,7 +11,24 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'] != 1)) {
 
 $user_id = filter_input(INPUT_POST, 'user_id', FILTER_VALIDATE_INT);
 
- ?>
+$queryAllUsers = 'SELECT * FROM users';
+$statement4 = $db->prepare($queryAllUsers);
+$statement4->execute();
+$users = $statement4->fetchAll();
+
+
+// Get league ID
+if (!isset($category_id)) {
+    $category_id = filter_input(
+        INPUT_GET,
+        'league_id',
+        FILTER_VALIDATE_INT
+    );
+    if ($category_id == NULL || $category_id == FALSE) {
+        $category_id = 1;
+    }
+}
+?>
 
 <div class="container">
     <?php

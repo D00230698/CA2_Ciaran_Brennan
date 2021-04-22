@@ -49,6 +49,7 @@ include('includes/header.php');
 <!-- display a list of categories -->
 <h2>Countries</h2>
 <nav>
+<div id="mySidenav" class="sidenav">
 <ul>
 <?php foreach ($categories as $category) : ?>
 <li><a href=".?category_id=<?php echo $category['categoryID']; ?>">
@@ -57,6 +58,7 @@ include('includes/header.php');
 </li>
 <?php endforeach; ?>
 </ul>
+</div>  
 </nav>          
 </aside>
 
@@ -79,8 +81,6 @@ include('includes/header.php');
 </tr>
 <?php endforeach; ?>
 </table>
-<p><a href="add_record_form.php">Add Player</a></p>
-<p><a href="category_list.php">Manage Countries</a></p>
 </section>
 <?php
 include('includes/footer.php');

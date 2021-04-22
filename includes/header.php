@@ -12,12 +12,30 @@
 <header><h1>The Olympics</h1>
 <div class="topnav">
   <a class="active" href="index.php">Home</a>
-  <a href="add_record_form.php">Add Player</a>
+  <?php
+  session_start();
+  if(isset($_SESSION['user_id']) && ($_SESSION['user_id']) == 1){
+    echo'  
+  <a href="add_team_form.php">Add Team</a>
+  <a href="add_record.php">Add player</a>
   <a href="manage.php">Manage</a>
+  ';
+  }?>
+
   <a href="contact.php">Contact</a>
-  <a href="register.php">Register</a>
+  <?php
+if(!isset($_SESSION['user_id'])){
+  echo'
   <a href="login.php">Login</a>
-  <a href="logout.php">logout</a>
+  <a href="register.php">Register</a>
+  ';
+}?>
+<?php
+if(isset($_SESSION['user_id'])){
+  echo'
+  <a href="logout.php">Logout</a>';
+}?>
 
 </div>
 </header>
+
