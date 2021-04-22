@@ -101,7 +101,7 @@ id="delete_record_form">
 value="<?php echo $record['recordID']; ?>">
 <input type="hidden" name="category_id"
 value="<?php echo $record['categoryID']; ?>">
-<input type="submit" value="Delete">
+<input type="submit" value="Delete" id="delete_button">
 </form></td>
 <td><form action="edit_record_form.php" method="post"
 id="delete_record_form">
@@ -114,8 +114,6 @@ value="<?php echo $record['categoryID']; ?>">
 </tr>
 <?php endforeach; ?>
 </table>
-<p><a href="add_record_form.php">Add Player</a></p>
-<p><a href="category_list.php">Manage Countries</a></p>
 </section>
 <?php
 include('includes/footer.php');

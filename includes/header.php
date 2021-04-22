@@ -16,9 +16,9 @@
   session_start();
   if(isset($_SESSION['user_id']) && ($_SESSION['user_id']) == 1){
     echo'  
-  <a href="add_team_form.php">Add Team</a>
   <a href="add_record.php">Add player</a>
   <a href="manage.php">Manage</a>
+  <a href="user_table.php">Users</a>
   ';
   }?>
 

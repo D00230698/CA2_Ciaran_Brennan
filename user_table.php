@@ -1,6 +1,12 @@
 <?php
 require_once('database.php');
 
+if ((isset($_SESSION['user_id']) && !empty($_SESSION['user_id'] != 1))) {
+    //User not logged in. Redirect them back to the login.php page.
+    header('Location: login.php');
+    exit;
+}
+
 
 if ((isset($_SESSION['user_id']) && !empty($_SESSION['user_id'] != 1))) {
     //User not logged in. Redirect them back to the login.php page.
