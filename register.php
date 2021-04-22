@@ -10,7 +10,7 @@ session_start();
 /**
  * Include ircmaxell's password_compat library.
  */
-require 'libary-password/password.php';
+require 'libary-folder/password.php';
 
 /**
  * Include our MySQL connection.
