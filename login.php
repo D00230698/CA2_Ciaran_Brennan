@@ -60,7 +60,7 @@ if(isset($_POST['login'])){
             $_SESSION['logged_in'] = time();
             
             //Redirect to our protected page, which we called home.php
-            header('Location: index.php');
+            header('Location: manage.php');
             exit;
             
         } else{
@@ -72,6 +72,7 @@ if(isset($_POST['login'])){
 }
  
 ?>
+<div class="container">
 <!DOCTYPE html>
 <?php
 include('includes/header.php');

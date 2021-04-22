@@ -1,4 +1,5 @@
 <?php
+
 require_once('database.php');
 
 // Get category ID
@@ -68,8 +69,6 @@ include('includes/header.php');
 <th>Name</th>
 <th>Sport</th>
 <th>Age</th>
-<th>Delete</th>
-<th>Edit</th>
 </tr>
 <?php foreach ($records as $record) : ?>
 <tr>
@@ -77,22 +76,6 @@ include('includes/header.php');
 <td><?php echo $record['name']; ?></td>
 <td class="right"><?php echo $record['sport']; ?></td>
 <td class="right"><?php echo $record['age']; ?></td>
-<td><form action="delete_record.php" method="post"
-id="delete_record_form">
-<input type="hidden" name="record_id"
-value="<?php echo $record['recordID']; ?>">
-<input type="hidden" name="category_id"
-value="<?php echo $record['categoryID']; ?>">
-<input type="submit" value="Delete">
-</form></td>
-<td><form action="edit_record_form.php" method="post"
-id="delete_record_form">
-<input type="hidden" name="record_id"
-value="<?php echo $record['recordID']; ?>">
-<input type="hidden" name="category_id"
-value="<?php echo $record['categoryID']; ?>">
-<input type="submit" value="Edit">
-</form></td>
 </tr>
 <?php endforeach; ?>
 </table>

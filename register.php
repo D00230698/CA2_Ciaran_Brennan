@@ -18,7 +18,8 @@ require 'libary-folder/password.php';
 require 'login_connect.php';
 
 ?>
-
+<div class="container">
+    
 <!DOCTYPE html>
 <?php
 include('includes/header.php');
@@ -86,10 +87,8 @@ if(isset($_POST['register'])){
 }
 
 ?>
+
 <!DOCTYPE html>
-<?php
-include('includes/header.php');
-?>
         <h1>Register</h1>
         <form action="register.php" method="post">
             <label for="username">Username</label>
