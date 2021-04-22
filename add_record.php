@@ -1,5 +1,7 @@
 <?php
 
+
+require_once('database.php');
 // Get the product data
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 $name = filter_input(INPUT_POST, 'name');
