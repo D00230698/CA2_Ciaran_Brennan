@@ -1,3 +1,27 @@
+<script>
+function phonenumber(inputtxt)
+{
+  var phoneno = /^\d{10}$/;
+  if((inputtxt.value.match(phoneno))
+        {
+      return true;
+        }
+      else
+        {
+        alert("message");
+        return false;
+        }
+}
+
+function validateForm(){
+    var nameRegex = /^[a-zA-Z\-]+$/;
+    var validfirstUsername = document.frm.firstName.value.match(nameRegex);
+    if(validUsername == null){
+        alert("Your first name is not valid. Only characters A-Z, a-z and '-' are  acceptable.");
+        document.frm.firstName.focus();
+        return false;
+    }
+</script>
 <?php
 
 //register.php
@@ -24,7 +48,7 @@ include('includes/header.php');
 //If the POST var "register" exists (our submit button), then we can
 //assume that the user has submitted the registration form.
 if(isset($_POST['register'])){
-    
+    $errors = '';
     //Retrieve the field values from our registration form.
     $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
     $phone = !empty($_POST['phone']) ? trim($_POST['phone']) : null;
@@ -32,8 +56,30 @@ if(isset($_POST['register'])){
     
     //TO ADD: Error checking (username characters, password length, etc).
     //Basically, you will need to add your own error checking BEFORE
+    // if (!preg_match(
+    //     "/^.{3,32}$/i", 
+    //     $username))
+    //     {
+    //         $errors .= "\n Error: Invalid username";
+    //     }
+
+    // function isNameValid($username) { 
+    //     $pattern = '/^[A-Za-z]+/'; 
+    //     if (preg_match($pattern, $username)) {
+    //         return true; 
+    //     } 
+    //     return false; 
+    // }
+
+    // if (!preg_match(
+    //     "/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/i", 
+    //     $phone))
+    //     {
+    //         $errors .= "\n Error: Invalid phone number";
+    //     }
     //the prepared statement is built and executed.
-    
+
+        
     //Now, we need to check if the supplied username already exists.
     
     //Construct the SQL statement and prepare it.
@@ -89,11 +135,11 @@ if(isset($_POST['register'])){
         <h1>Register</h1>
         <form action="register.php" method="post">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username"><br>
+            <input /*pattern = "/^[A-Za-z]+/"*/ type="text" id="username" name="username" required><br>
             <label for="phone">Phone</label>
-            <input type="text" id="phone" name="phone"><br>
+            <input /*pattern = "/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/i/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/i"*/ type="text" id="phone" name="phone" required><br>
             <label for="password">Password</label>
-            <input type="text" id="password" name="password"><br>
+            <input type="text" id="password" name="password" required><br>
             <input type="submit" name="register" value="Register"></button>
         </form>
         <script language="JavaScript">
